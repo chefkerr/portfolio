@@ -115,7 +115,7 @@ export type Experience = {
   stack: string[];
 };
 
-export const experiences: Experience[] = *[
+export const experiences: Experience[] = [
   {
     id: "dxc-tma",
     company: "DXC Technology — for CDG",
