@@ -16,25 +16,27 @@ export default function ProjectCard({ project, index }: { project: Project; inde
       className="group relative glass rounded-2xl overflow-hidden hover:border-signal/50 transition-colors"
     >
       <Link href={`/projects/${project.slug}`} data-cursor-hover className="block">
-        <div className="relative aspect-[16/10] overflow-hidden bg-panel">
-          <Image
-              src={project.images[0]}
-              alt={project.title}
-              fill
-              sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-          <div className="absolute inset-0 bg-gradient-to-t from-void/80 via-void/10 to-transparent" />
-          <span className="absolute top-4 left-4 text-[11px] font-mono px-2.5 py-1 rounded-md glass text-chalk">
-            {project.tag}
-          </span>
-          <span className="absolute top-4 right-4 text-[11px] font-mono px-2.5 py-1 rounded-md bg-signal/20 text-signal border border-signal/30">
-            {project.year}
-          </span>
-        </div>
+        <div className="relative aspect-[16/10] overflow-hidden bg-void">
+  <Image
+    src={project.images[0]}
+    alt={project.title}
+    fill
+    sizes="(max-width: 768px) 100vw, 50vw"
+    className="object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+  />
+</div>
 
-        <div className="p-6">
-          <div className="flex items-start justify-between gap-3">
+<div className="p-6">
+  <div className="flex items-center gap-2 mb-3">
+    <span className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/5 text-chalk border border-line">
+      {project.tag}
+    </span>
+    <span className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-signal/20 text-signal border border-signal/30">
+      {project.year}
+    </span>
+ 
+
+        
             <h3 className="font-display text-lg text-chalk group-hover:text-signal transition-colors">
               {project.title}
             </h3>

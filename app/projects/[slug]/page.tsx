@@ -86,16 +86,17 @@ export default async function ProjectPage({
   {project.images.map((src, i) => (
     <div
       key={src}
-      className={`relative aspect-video rounded-2xl overflow-hidden glass ${
+      className={`rounded-2xl overflow-hidden glass bg-void ${
         i === 0 ? "sm:col-span-2" : ""
       }`}
     >
       <Image
         src={src}
-        alt={`${project.title} — screenshot ${i + 1}`}
-        fill
+        alt={`${project.title} — capture ${i + 1}`}
+        width={1600}
+        height={900}
         sizes={i === 0 ? "100vw" : "50vw"}
-        className="object-cover"
+        className="w-full h-auto"
       />
     </div>
   ))}
